@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Pomodoro App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Optimiza tu productividad con la técnica Pomodoro
 
-## Available Scripts
+Pomodoro App es una herramienta configurable que te ayuda a gestionar el tiempo dedicado a tus tareas y mejorar tu productividad mediante la técnica Pomodoro. La aplicación permite registrar todas tus tareas y guardar un historial detallado de tu progreso.
 
-In the project directory, you can run:
+![Pomodoro App Screenshot](https://via.placeholder.com/800x400) <!-- Reemplaza con la URL de la imagen de tu aplicación -->
 
-### `npm start`
+## Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Registro de Tareas**: Introduce el nombre de la tarea antes de iniciar el temporizador. Solo puedes cambiar la tarea cuando el temporizador está completamente detenido.
+- **Control del Temporizador**: Inicia, pausa, detén y pasa al siguiente ciclo del Pomodoro con botones intuitivos.
+- **Ciclos Configurables**:
+  - 4 bloques de trabajo de 25 minutos con 5 minutos de descanso entre ellos.
+  - Después de 3 bloques de descanso cortos, el cuarto bloque de descanso puede ser de 15 o 30 minutos.
+  - La configuración se guarda de forma persistente.
+- **Funcionamiento en Segundo Plano**: La aplicación sigue contando el tiempo y manteniendo el estado actual incluso si está en segundo plano.
+- **Notificaciones y Alertas**: Recibe notificaciones sonoras y visuales al finalizar cada bloque de trabajo o descanso.
+- **Historial de Tareas**: Guarda y visualiza un historial diario de tus tareas con detalles de tiempo de inicio, fin y duración total. Los registros se guardan cada vez que se detiene el temporizador.
+- **Interfaz Atractiva**: Diseñada para ser visualmente atractiva y fácil de usar, con animaciones y un diseño UI moderno.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Requisitos
 
-### `npm test`
+- **Navegador Web**: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari.
+- **Node.js**: Versión 14 o superior.
+- **React**: Versión 17 o superior.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación y Uso
 
-### `npm run build`
+### Instrucciones de Instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clonar el Repositorio**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/tuusuario/pomodoro-app.git
+   cd pomodoro-app
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Instalar Dependencias**
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Iniciar la Aplicación**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Acceder a la Aplicación**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   Abre tu navegador y visita `http://localhost:3000` para ver la aplicación en acción.
 
-## Learn More
+### Uso de la Aplicación
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Introducir Tarea**: Escribe el nombre de la tarea en el campo de texto y presiona "Enter" o el botón de confirmación.
+2. **Iniciar Temporizador**: Haz clic en el botón de inicio para comenzar el ciclo de trabajo de 25 minutos.
+3. **Pausar y Detener**: Usa los botones de pausa y detener según sea necesario.
+4. **Cambiar Ciclo**: Una vez completado un bloque, recibirás una notificación para iniciar el siguiente bloque o descanso.
+5. **Ver Historial**: Accede a la pantalla de historial para ver tus tareas anteriores agrupadas por día.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contribuciones
 
-### Code Splitting
+Las contribuciones son bienvenidas. Si deseas colaborar, por favor, sigue los siguientes pasos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Haz un fork del proyecto.
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz commit (`git commit -m 'Añadir nueva característica'`).
+4. Haz push a la rama (`git push origin feature/nueva-caracteristica`).
+5. Abre un Pull Request.
 
-### Analyzing the Bundle Size
+## Créditos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este proyecto se basa en la idea propuesta por [Mouredev](https://github.com/mouredev/Monthly-App-Challenge-2022?tab=readme-ov-file#febrero-030222).
 
-### Making a Progressive Web App
+## Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-### Advanced Configuration
+## Enlaces
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Repositorio GitHub](https://github.com/tuusuario/pomodoro-app)
