@@ -1,0 +1,19 @@
+.boardContent {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+.boardContent h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 30px;
+  margin-top: 10px;
+}
+.boardContent h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(10, 213, 213);
+}
