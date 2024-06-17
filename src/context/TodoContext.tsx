@@ -2,6 +2,9 @@ import React, { createContext, useContext, useState } from "react";
 
 const initialValues = {
   todos: [{}],
+  addTodo: (title) => {
+    console.log(title);
+  },
 };
 
 const TodoContext = createContext(initialValues);
@@ -15,10 +18,16 @@ export function TodoProvider({ children }: any) {
       title: " 2da task",
     },
   ]);
-  console.log(setTodos);
 
+  function addTodo(title) {
+    console.log(title, "aqui");
+
+    setTodos((prev) => [...prev, { title: title }]);
+  }
   return (
-    <TodoContext.Provider value={{ todos }}>{children}</TodoContext.Provider>
+    <TodoContext.Provider value={{ todos, addTodo }}>
+      {children}
+    </TodoContext.Provider>
   );
 }
 
