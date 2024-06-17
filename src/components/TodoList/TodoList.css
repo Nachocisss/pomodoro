@@ -29,7 +29,6 @@
 .todoTitle {
   font-weight: 600;
 }
-
 .todoTabSelected {
   background: linear-gradient(45deg, rgb(16, 171, 171), rgb(25, 25, 162));
 }
