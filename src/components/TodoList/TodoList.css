@@ -15,26 +15,6 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-weight: 600;
 }
-.todoTabSelected {
-  background: linear-gradient(45deg, rgb(16, 171, 171), rgb(25, 25, 162));
-  height: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  gap: 4px;
-  border-bottom: 0px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  cursor: pointer;
-}
-.todoTitleSelected {
-  color: whitesmoke;
-  font-weight: 600;
-}
-.todoTimeSelected {
-  color: whitesmoke;
-  font-weight: 1600;
-}
 .todoTab {
   height: 60px;
   display: flex;
@@ -51,4 +31,14 @@
 }
 .todoTime {
   font-weight: 600;
+}
+
+.todoTabSelected {
+  background: linear-gradient(45deg, rgb(16, 171, 171), rgb(25, 25, 162));
+}
+.todoTitleSelected {
+  color: whitesmoke;
+}
+.todoTimeSelected {
+  color: whitesmoke;
 }

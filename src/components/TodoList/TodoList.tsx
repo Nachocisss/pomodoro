@@ -15,19 +15,23 @@ const tasks = [
 export default function TodoList() {
   const [selectedTaskIndex, setSelectedtaskIndex] = useState(1);
 
-  function selectedTaskRender(t) {
-    return (
-      <div className="todoTabSelected">
-        <span className="todoTitleSelected">{t.title}</span>
-        <span className="todoTimeSelected">{t.time}</span>
-      </div>
-    );
+  function handleSelectedStyle(classname, selected) {
+    return `${classname} ${selected && `${classname}Selected`}`;
   }
+
   function taskRender(t, index) {
+    const selected = index === selectedTaskIndex;
     return (
-      <div className="todoTab" onClick={() => setSelectedtaskIndex(index)}>
-        <span className="todoTitle">{t.title}</span>
-        <span className="todoTime">{t.time}</span>
+      <div
+        className={handleSelectedStyle("todoTab", selected)}
+        onClick={() => setSelectedtaskIndex(index)}
+      >
+        <span className={handleSelectedStyle("todoTitle", selected)}>
+          {t.title}
+        </span>
+        <span className={handleSelectedStyle("todoTime", selected)}>
+          {t.time}
+        </span>
       </div>
     );
   }
@@ -39,13 +43,12 @@ export default function TodoList() {
       </div>
     );
   }
+
   return (
     <div className="todoContainer">
       {todoHeader()}
       {tasks.map((t, index) => {
-        return index === selectedTaskIndex
-          ? selectedTaskRender(t)
-          : taskRender(t, index);
+        return taskRender(t, index);
       })}
     </div>
   );
