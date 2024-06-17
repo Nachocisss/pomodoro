@@ -1,4 +1,54 @@
 .todoContainer {
   flex: 1;
-  background-color: antiquewhite;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.todoContainer span {
+  font-size: 16px;
+  margin-left: 20px;
+}
+.todoHeader {
+  border-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: start;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: 600;
+}
+.todoTabSelected {
+  background: linear-gradient(45deg, rgb(16, 171, 171), rgb(25, 25, 162));
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 4px;
+  border-bottom: 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+.todoTitleSelected {
+  color: whitesmoke;
+  font-weight: 600;
+}
+.todoTimeSelected {
+  color: whitesmoke;
+  font-weight: 1600;
+}
+.todoTab {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 4px;
+  border-bottom: 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+.todoTitle {
+  font-weight: 600;
+}
+.todoTime {
+  font-weight: 600;
 }
