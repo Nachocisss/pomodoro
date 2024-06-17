@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./TodoList.css";
+import { Form } from "./Form/Form.tsx";
+import { FaCheckCircle } from "react-icons/fa";
 
 const tasks = [
   {
     title: " 1ra task",
-    time: 14,
   },
   {
     title: " 2da task",
-    time: 309,
   },
 ];
 
@@ -29,9 +29,7 @@ export default function TodoList() {
         <span className={handleSelectedStyle("todoTitle", selected)}>
           {t.title}
         </span>
-        <span className={handleSelectedStyle("todoTime", selected)}>
-          {t.time}
-        </span>
+        {selected && <FaCheckCircle size={15} fill="white" />}
       </div>
     );
   }
@@ -39,7 +37,7 @@ export default function TodoList() {
   function todoHeader() {
     return (
       <div className="todoHeader">
-        <span className="todoHeaderText">SELECT YOUR TASK</span>
+        <span className="todoHeaderText">Select Your Task</span>
       </div>
     );
   }
@@ -50,6 +48,7 @@ export default function TodoList() {
       {tasks.map((t, index) => {
         return taskRender(t, index);
       })}
+      <Form />
     </div>
   );
 }

@@ -11,25 +11,22 @@
   border-bottom: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
-  text-align: start;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: center;
   font-weight: 600;
 }
 .todoTab {
-  height: 60px;
+  height: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   gap: 4px;
   border-bottom: 0px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
+  padding-right: 20px;
 }
 .todoTitle {
-  font-weight: 600;
-}
-.todoTime {
   font-weight: 600;
 }
 
@@ -37,8 +34,5 @@
   background: linear-gradient(45deg, rgb(16, 171, 171), rgb(25, 25, 162));
 }
 .todoTitleSelected {
-  color: whitesmoke;
-}
-.todoTimeSelected {
   color: whitesmoke;
 }
