@@ -1,0 +1,15 @@
+.headerContainer {
+  height: 10vh;
+  align-content: center;
+  text-align: start;
+  padding-left: 100px;
+  border-radius: 16px;
+}
+.headerTitle {
+  font-size: 36px;
+  font-weight: 700;
+  margin-left: 8px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
