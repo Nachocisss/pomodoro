@@ -19,8 +19,6 @@ export function TodoProvider({ children }: any) {
   const [pause, setPause] = useState(false);
 
   useEffect(() => {
-    console.log(pause);
-
     if (time <= 0 || pause) return;
     const timer = setInterval(() => {
       setTime((prevTime) => prevTime - 1);

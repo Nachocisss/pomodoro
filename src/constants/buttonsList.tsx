@@ -8,7 +8,7 @@ export default function buttonsList() {
     {
       icon: <FaPlay size={40} fill={"black"} />,
       onclick: () => {
-        putTimeOnClock(20);
+        putTimeOnClock(120);
       },
       key: "playButton",
     },
