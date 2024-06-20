@@ -3,12 +3,12 @@ import { useTodoContext } from "../context/TodoContext.tsx";
 import React from "react";
 
 export default function buttonsList() {
-  const { putTimeOnClock, putPause } = useTodoContext();
+  const { putStop, putPlay, putPause, forwardOnClick } = useTodoContext();
   const buttons = [
     {
       icon: <FaPlay size={40} fill={"black"} />,
       onclick: () => {
-        putTimeOnClock(120);
+        putPlay();
       },
       key: "playButton",
     },
@@ -22,14 +22,14 @@ export default function buttonsList() {
     {
       icon: <FaStop size={40} fill={"black"} />,
       onclick: () => {
-        putTimeOnClock(0);
+        putStop();
       },
       key: "stopButton",
     },
     {
       icon: <FaFastForward size={40} fill={"black"} />,
       onclick: () => {
-        console.log("FaFastForward");
+        forwardOnClick();
       },
       key: "forwardButton",
     },

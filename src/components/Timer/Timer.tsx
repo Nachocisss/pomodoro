@@ -7,7 +7,7 @@ import { formatTime } from "../../utils/TimeUtils.tsx";
 export default function Timer() {
   const { time } = useTodoContext();
   const buttonsArray = buttonsList();
-  const [selectedButton, setSelectedButton] = useState(0);
+  const [selectedButton, setSelectedButton] = useState(NaN);
 
   function clockRender() {
     return (
