@@ -32,3 +32,6 @@
 .timerIconContainer:hover {
   background: linear-gradient(90deg, #ff7e5f, #feb47b);
 }
+.timerIconContainerSelected {
+  background: linear-gradient(90deg, #ff4a1d, #ff923f);
+}

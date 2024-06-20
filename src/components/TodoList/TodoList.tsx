@@ -18,6 +18,7 @@ export default function TodoList() {
       <div
         className={handleSelectedStyle("todoTab", selected)}
         onClick={() => setSelectedtaskIndex(index)}
+        key={`${t.title} ${t.index}`}
       >
         <span className={handleSelectedStyle("todoTitle", selected)}>
           {t.title}
