@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { stepsMinutes } from "../utils/TimeUtils.tsx";
 
 const initialValues = {
   todos: [{}],
@@ -10,9 +11,8 @@ const initialValues = {
   putPause: () => {},
   forwardOnClick: () => {},
   putStop: () => {},
+  currentStep: 0,
 };
-
-const stepsMinutes = [25, 5, 25, 5, 25, 5, 25, 30];
 
 const TodoContext = createContext(initialValues);
 
@@ -34,6 +34,7 @@ export function TodoProvider({ children }: any) {
   function putStop() {
     setCurrentStep(0);
     setTime(stepsMinutes[0] * 60);
+    setPause(true);
   }
   function putPause() {
     setPause(true);
@@ -50,7 +51,7 @@ export function TodoProvider({ children }: any) {
       setTime(timeNextStepSeconds);
       setCurrentStep((s) => s + 1);
     }
-    putPause();
+    setPause(true);
   }
 
   const [todos, setTodos] = useState([
@@ -75,6 +76,7 @@ export function TodoProvider({ children }: any) {
         putPause,
         forwardOnClick,
         putStop,
+        currentStep,
       }}
     >
       {children}

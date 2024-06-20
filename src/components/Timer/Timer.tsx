@@ -2,12 +2,35 @@ import React, { useState } from "react";
 import "./Timer.css";
 import { useTodoContext } from "../../context/TodoContext.tsx";
 import buttonsList from "../../constants/buttonsList.tsx";
-import { formatTime } from "../../utils/TimeUtils.tsx";
+import { formatTime, stepsMinutes } from "../../utils/TimeUtils.tsx";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function Timer() {
-  const { time } = useTodoContext();
+  const { time, currentStep } = useTodoContext();
   const buttonsArray = buttonsList();
   const [selectedButton, setSelectedButton] = useState(NaN);
+
+  function stepsRender() {
+    return (
+      <div className="steps">
+        {stepsMinutes.map((step, index) => {
+          const isCurrent = index === currentStep;
+          return (
+            <div key={`step ${index}`} className="stepContainer">
+              {isCurrent && (
+                <div className="stepIconContainer">
+                  <FaChevronDown />
+                </div>
+              )}
+              <div className="stepCircle">
+                <span className="stepText">{step}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 
   function clockRender() {
     return (
@@ -42,6 +65,7 @@ export default function Timer() {
 
   return (
     <div className="timerContainer">
+      {stepsRender()}
       {clockRender()}
       {timerButtons()}
     </div>

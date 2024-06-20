@@ -1,3 +1,5 @@
+export const stepsMinutes = [25, 5, 25, 5, 25, 5, 25, 30];
+
 export const formatTime = (seconds) => {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
