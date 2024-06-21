@@ -18,7 +18,7 @@ export default function TodoList() {
       <div
         className={handleSelectedStyle("todoTab", selected)}
         onClick={() => setSelectedtaskIndex(index)}
-        key={`${t.title} ${t.index}`}
+        key={`${t.title} ${index}`}
       >
         <span className={handleSelectedStyle("todoTitle", selected)}>
           {t.title}
@@ -39,9 +39,10 @@ export default function TodoList() {
   return (
     <div className="todoContainer">
       {todoHeader()}
-      {todos.map((t, index) => {
-        return taskRender(t, index);
-      })}
+      {todos &&
+        todos.map((t, index) => {
+          return taskRender(t, index);
+        })}
       <Form />
     </div>
   );

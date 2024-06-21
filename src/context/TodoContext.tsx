@@ -53,23 +53,21 @@ export function TodoProvider({ children }: any) {
     }
     setPause(true);
   }
-
-  const [todos, setTodos] = useState([
-    {
-      title: "sca cscas",
-    },
-    {
-      title: " 2da task",
-    },
-  ]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todos")));
 
   function addTodo(title) {
-    setTodos((prev) => [...prev, { title: title }]);
+    const newTitle = { title: title };
+    const newTodos = todos
+      ? { todos: [...todos.todos, newTitle] }
+      : { todos: [newTitle] };
+
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+    setTodos(newTodos);
   }
   return (
     <TodoContext.Provider
       value={{
-        todos,
+        todos: todos?.todos,
         addTodo,
         time,
         putPlay,

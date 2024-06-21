@@ -7,8 +7,8 @@ export function Form() {
 
   function submitHandler(e) {
     e.preventDefault();
-    const newTodo = document.getElementById("newTodoTitle")?.value;
-    addTodo(newTodo);
+    const newTodoTitle = document.getElementById("newTodoTitle")?.value;
+    addTodo(newTodoTitle);
   }
   return (
     <form action="" className="todoForm" onSubmit={submitHandler}>
