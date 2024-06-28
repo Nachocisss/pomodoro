@@ -1,12 +1,28 @@
 .timerContainer {
   flex: 1;
   align-content: center;
+  position: relative;
 }
 .steps {
   display: flex;
   justify-content: center;
   gap: 4px;
   margin-bottom: 8px;
+}
+.chooseTodoModal {
+  border-radius: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(90deg, #ff7f5fd6, #feb47bd1);
+}
+.chooseTodoModalText {
+  color: black;
+  font-size: 40px;
+  font-weight: 800;
 }
 .stepContainer {
   position: relative;

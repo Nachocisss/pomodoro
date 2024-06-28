@@ -1,8 +1,51 @@
 .boardScreen {
+  position: relative;
   height: 80vh;
   width: 80vw;
   background-color: whitesmoke;
   margin: auto;
   margin-top: 10vh;
   border-radius: 16px;
+  overflow-y: scroll;
+}
+.notification {
+  position: absolute;
+  background: linear-gradient(-45deg, rgb(25, 213, 25), rgb(36, 112, 36));
+  bottom: 0;
+  right: 0;
+  height: 10vh;
+  width: 20vw;
+  margin: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  animation: shake 0.1s linear 8 alternate, appear 0.5s linear reverse;
+  justify-content: center;
+}
+
+@keyframes shake {
+  from {
+    transform: rotate(-5deg);
+  }
+
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 0;
+  }
+}
+
+.notificationText {
+  font-size: 22px;
+  color: rgb(49, 49, 49);
+  font-weight: 600;
+}
+.notificationSubText {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
 }

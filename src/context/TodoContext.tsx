@@ -4,7 +4,7 @@ import { stepsMinutes } from "../utils/TimeUtils.tsx";
 const initialValues = {
   todos: [{}],
   addTodo: (title) => {
-    console.log(title);
+    return title;
   },
   time: 0,
   putPlay: () => {},
@@ -12,6 +12,11 @@ const initialValues = {
   forwardOnClick: () => {},
   putStop: () => {},
   currentStep: 0,
+  selectedTaskIndex: -1,
+  chooseTodoIndex: (index) => {
+    return index;
+  },
+  finishedTodo: { title: "title" },
 };
 
 const TodoContext = createContext(initialValues);
@@ -20,6 +25,8 @@ export function TodoProvider({ children }: any) {
   const [time, setTime] = useState(stepsMinutes[0] * 60);
   const [pause, setPause] = useState(true);
   const [currentStep, setCurrentStep] = useState(0);
+  const [finishedTodo, setFinishedTodo] = useState({ title: "" });
+  const [selectedTaskIndex, setSelectedtaskIndex] = useState(-1);
 
   useEffect(() => {
     if (time <= 0 || pause) {
@@ -40,12 +47,29 @@ export function TodoProvider({ children }: any) {
     setPause(true);
   }
   function putPlay() {
+    setFinishedTodo({ title: "" });
     setPause(false);
   }
+  function chooseTodoIndex(index) {
+    setSelectedtaskIndex(index);
+  }
+
+  function finishTodo() {
+    const getFinishedTodo = todos.todos[selectedTaskIndex];
+    setFinishedTodo(getFinishedTodo);
+    const newTodos = {
+      todos: todos.todos.filter((_t, index) => index !== selectedTaskIndex),
+    };
+    setTodos(newTodos);
+    setSelectedtaskIndex(-1);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+    setCurrentStep(0);
+  }
+
   function forwardOnClick() {
     const isLastStep = currentStep + 1 === stepsMinutes.length;
     if (isLastStep) {
-      console.log("fin del ciclo");
+      finishTodo();
     } else {
       const timeNextStepSeconds = stepsMinutes[currentStep + 1] * 60;
       setTime(timeNextStepSeconds);
@@ -53,7 +77,9 @@ export function TodoProvider({ children }: any) {
     }
     setPause(true);
   }
-  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todos")));
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos") || "")
+  );
 
   function addTodo(title) {
     const newTitle = { title: title };
@@ -75,6 +101,9 @@ export function TodoProvider({ children }: any) {
         forwardOnClick,
         putStop,
         currentStep,
+        selectedTaskIndex,
+        chooseTodoIndex,
+        finishedTodo,
       }}
     >
       {children}

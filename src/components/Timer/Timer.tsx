@@ -6,7 +6,7 @@ import { formatTime, stepsMinutes } from "../../utils/TimeUtils.tsx";
 import { FaChevronDown } from "react-icons/fa";
 
 export default function Timer() {
-  const { time, currentStep } = useTodoContext();
+  const { time, currentStep, selectedTaskIndex } = useTodoContext();
   const buttonsArray = buttonsList();
   const [selectedButton, setSelectedButton] = useState(NaN);
 
@@ -65,6 +65,11 @@ export default function Timer() {
 
   return (
     <div className="timerContainer">
+      {selectedTaskIndex < 0 && (
+        <div className="chooseTodoModal">
+          <span className="chooseTodoModalText">Choose a ToDo</span>
+        </div>
+      )}
       {stepsRender()}
       {clockRender()}
       {timerButtons()}

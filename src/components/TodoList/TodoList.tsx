@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TodoList.css";
 import { Form } from "./Form/Form.tsx";
 import { FaCheckCircle } from "react-icons/fa";
 import { useTodoContext } from "../../context/TodoContext.tsx";
 
 export default function TodoList() {
-  const [selectedTaskIndex, setSelectedtaskIndex] = useState(1);
-  const { todos } = useTodoContext();
+  const { todos, selectedTaskIndex, chooseTodoIndex } = useTodoContext();
 
   function handleSelectedStyle(classname, selected) {
     return `${classname} ${selected && `${classname}Selected`}`;
@@ -17,7 +16,7 @@ export default function TodoList() {
     return (
       <div
         className={handleSelectedStyle("todoTab", selected)}
-        onClick={() => setSelectedtaskIndex(index)}
+        onClick={() => chooseTodoIndex(index)}
         key={`${t.title} ${index}`}
       >
         <span className={handleSelectedStyle("todoTitle", selected)}>
